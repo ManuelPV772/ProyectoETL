@@ -1,0 +1,377 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/25/2025 11:15:56 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MAEL"
+  DTS:CreatorName="MAEL\stesh"
+  DTS:DTSID="{23A85A62-41C9-41CC-95C8-8B1F20A475D0}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="2058"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{0665B40A-C339-4E77-B226-DA78CFECFC14}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[MAEL.STG_Store]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{BEFE75DB-94A2-4F7B-AF50-1ED637874FE4}"
+      DTS:ObjectName="MAEL.STG_Store">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=MAEL;Initial Catalog=STG_Store;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\TRANSFORMAR CATEGORY"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{945EA6AB-1E69-4302-B8DC-D283742F123F}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TRANSFORMAR CATEGORY"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="4">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{BEFE75DB-94A2-4F7B-AF50-1ED637874FE4}"
+          SQLTask:SqlStatementSource="exec transformaCategoria;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\TRANSFORMAR CUSTOMER"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{BAC3C22A-D744-4AAA-88B7-69D5226764AF}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TRANSFORMAR CUSTOMER"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{BEFE75DB-94A2-4F7B-AF50-1ED637874FE4}"
+          SQLTask:SqlStatementSource="exec transformaClientes;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\TRANSFORMAR MALL"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{7314D966-2418-4F5D-B7A9-BA1D3A605CEE}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TRANSFORMAR MALL"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{BEFE75DB-94A2-4F7B-AF50-1ED637874FE4}"
+          SQLTask:SqlStatementSource="exec transformaMall;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\TRANSFORMAR PAGO"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{D8E5905B-D8EF-4CDC-A7F1-ED29BEF9E80E}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TRANSFORMAR PAGO"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{BEFE75DB-94A2-4F7B-AF50-1ED637874FE4}"
+          SQLTask:SqlStatementSource="exec transformaPaymentMethod;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\TRANSFORMAR SALES"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{A3EFDB1A-4E15-49B0-9EDF-76B757A132CF}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TRANSFORMAR SALES"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{BEFE75DB-94A2-4F7B-AF50-1ED637874FE4}"
+          SQLTask:SqlStatementSource="exec transformaSales;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\TRANSFORMAR TIEMPO"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{3240FA9B-D8B1-4008-9F72-047CCF0FBA87}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TRANSFORMAR TIEMPO"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{BEFE75DB-94A2-4F7B-AF50-1ED637874FE4}"
+          SQLTask:SqlStatementSource="exec transformaTiempo;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{11922334-2323-4A1E-9C12-728E036A28DB}"
+      DTS:From="Package\TRANSFORMAR CUSTOMER"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\TRANSFORMAR SALES" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{E0F55935-7AD5-4A87-AFA3-8B749BFF4DD4}"
+      DTS:From="Package\TRANSFORMAR MALL"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 1"
+      DTS:To="Package\TRANSFORMAR SALES" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{788FD5BF-6BF6-4E4B-9373-F8889EF0855F}"
+      DTS:From="Package\TRANSFORMAR CATEGORY"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 2"
+      DTS:To="Package\TRANSFORMAR SALES" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{C03F4E55-3FFB-4598-889B-85B55F5071E3}"
+      DTS:From="Package\TRANSFORMAR PAGO"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 3"
+      DTS:To="Package\TRANSFORMAR SALES" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{68FD341D-C1A2-48A9-A433-EC210881B4C4}"
+      DTS:From="Package\TRANSFORMAR TIEMPO"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 4"
+      DTS:To="Package\TRANSFORMAR SALES" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="210,42"
+          Id="Package\TRANSFORMAR CUSTOMER"
+          TopLeft="12,102" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\TRANSFORMAR MALL"
+          TopLeft="241,189" />
+        <NodeLayout
+          Size="208,42"
+          Id="Package\TRANSFORMAR CATEGORY"
+          TopLeft="462,99" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\TRANSFORMAR PAGO"
+          TopLeft="740,164" />
+        <NodeLayout
+          Size="193,42"
+          Id="Package\TRANSFORMAR TIEMPO"
+          TopLeft="981,96" />
+        <NodeLayout
+          Size="185,51"
+          Id="Package\TRANSFORMAR SALES"
+          TopLeft="478,574" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="117,144">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="394.5,430"
+              Start="0,0"
+              End="394.5,422.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,311.674603174603" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,311.674603174603"
+                    Point2="0,315.674603174603"
+                    Point3="4,315.674603174603" />
+                  <mssgle:LineSegment
+                    End="390.5,315.674603174603" />
+                  <mssgle:CubicBezierSegment
+                    Point1="390.5,315.674603174603"
+                    Point2="394.5,315.674603174603"
+                    Point3="394.5,319.674603174603" />
+                  <mssgle:LineSegment
+                    End="394.5,422.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 1]"
+          TopLeft="331.5,231">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="209.5,343"
+              Start="0,0"
+              End="209.5,335.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,200.03536977492" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,200.03536977492"
+                    Point2="0,204.03536977492"
+                    Point3="4,204.03536977492" />
+                  <mssgle:LineSegment
+                    End="205.5,204.03536977492" />
+                  <mssgle:CubicBezierSegment
+                    Point1="205.5,204.03536977492"
+                    Point2="209.5,204.03536977492"
+                    Point3="209.5,208.03536977492" />
+                  <mssgle:LineSegment
+                    End="209.5,335.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 2]"
+          TopLeft="568.25,141">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,433"
+              Start="0,0"
+              End="0,425.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,425.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 3]"
+          TopLeft="831.5,206">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-231.5,368"
+              Start="0,0"
+              End="-231.5,360.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,214.906752411576" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,214.906752411576"
+                    Point2="0,218.906752411576"
+                    Point3="-4,218.906752411576" />
+                  <mssgle:LineSegment
+                    End="-227.5,218.906752411576" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-227.5,218.906752411576"
+                    Point2="-231.5,218.906752411576"
+                    Point3="-231.5,222.906752411576" />
+                  <mssgle:LineSegment
+                    End="-231.5,360.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 4]"
+          TopLeft="1077.5,138">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-448,436"
+              Start="0,0"
+              End="-448,428.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,316.079365079365" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,316.079365079365"
+                    Point2="0,320.079365079365"
+                    Point3="-4,320.079365079365" />
+                  <mssgle:LineSegment
+                    End="-444,320.079365079365" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-444,320.079365079365"
+                    Point2="-448,320.079365079365"
+                    Point3="-448,324.079365079365" />
+                  <mssgle:LineSegment
+                    End="-448,428.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
